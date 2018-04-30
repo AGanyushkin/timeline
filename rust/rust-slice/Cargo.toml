@@ -1,0 +1,7 @@
+[package]
+name = "rust-slice"
+version = "0.1.0"
+authors = ["Andrey Ganyushkin <aganyushkin@hotmail.com>"]
+
+[dependencies]
+rayon = "1.0"

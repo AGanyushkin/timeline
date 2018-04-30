@@ -1,0 +1,19 @@
+
+/devices/wb-gpio/controls/EXT1_R3A1 
+/devices/wb-gpio/controls/EXT1_R3A2
+/devices/wb-gpio/controls/EXT1_R3A3
+/devices/wb-gpio/controls/EXT1_R3A4
+/devices/wb-gpio/controls/EXT1_R3A5 kids_room
+/devices/wb-gpio/controls/EXT1_R3A6 larder
+/devices/wb-gpio/controls/EXT1_R3A7 hall
+/devices/wb-gpio/controls/EXT1_R3A8 hall_entrance
+
+/devices/wb-gpio/controls/EXT2_R3A1 
+/devices/wb-gpio/controls/EXT2_R3A2 bathroom
+/devices/wb-gpio/controls/EXT2_R3A3 toilet
+/devices/wb-gpio/controls/EXT2_R3A4 
+/devices/wb-gpio/controls/EXT2_R3A5 kitchen
+/devices/wb-gpio/controls/EXT2_R3A6 kitchen_table
+/devices/wb-gpio/controls/EXT2_R3A7 bedroom_1
+/devices/wb-gpio/controls/EXT2_R3A8 bedroom_2
+

@@ -1,0 +1,10 @@
+[package]
+name = "try1"
+version = "0.1.0"
+authors = ["Andrey Ganyushkin <aganyushkin@hotmail.com>"]
+
+[dependencies]
+futures = "0.1.18"
+reql = "0.0.10"
+reql-types = "0.0.2"
+tokio-core = "0.1.12"
