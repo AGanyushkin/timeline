@@ -1,0 +1,16 @@
+{
+  "name": "custom_blockchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "try1.js",
+  "scripts": {
+    "start": "node try1.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "uuid": "^3.1.0"
+  }
+}
