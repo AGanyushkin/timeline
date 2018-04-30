@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <!--<script src="lodash.js"></script>
+        <script src="platform.js"></script>
+        <script src="benchmark.js"></script>-->
+        <script>
+                    
+                        
+            function add(a, b) {
+                return a + b;
+            }
+
+            let p = 1;
+            let r = 0;
+            while (p--) {
+                for (let i = 0; i < 10000; i++) {
+                    r = add(i, i * 2);
+                    console.log(r);
+                }
+                
+                r = add(p, '1');
+                console.log(r);
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
