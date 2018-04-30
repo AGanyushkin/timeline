@@ -1,0 +1,98 @@
+Need to do
+        a) install/configure ethereum node
+        b) install/configure ethereum wallet
+        c) start mining
+
+Installation
+
+    "Geth" ethereum node commant line tool
+        windows
+            guide: https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows
+            download binaries: https://geth.ethereum.org/downloads/
+            unzip binaries
+            add binaries location to system PATH environment variable
+
+        linux
+            sudo apt-get install software-properties-common
+            sudo add-apt-repository -y ppa:ethereum/ethereum
+            sudo apt-get update
+            sudo apt-get install ethereum
+
+    "Ethereum Wallet". Desktop application. Wallet.
+
+        windows
+            download binaries: https://ethereum.org/
+
+    "Metamask" chrome extension. Wallet.
+        https://metamask.io/
+
+Initialization ethereum node
+
+    all platforms
+
+        * genesis block. It is "first block" in blockchain.
+                wileyDAOGenesis.json
+                {
+                    "config": {
+                        "chainId": 13,
+                        "homesteadBlock": 0,
+                        "eip155Block": 0,
+                        "eip158Block": 0
+                    },
+                    "difficulty": "1000000",
+                    "gasLimit": "2100000",
+                    "alloc": {
+                        "7df9a875a174b3bc565e6424a0050ebc1b2d1d82": { "balance": "300000" },
+                        "f41c74c9ae680c1aa78f42e5647a62f353b7bdde": { "balance": "400000" }
+                    }
+                }
+    
+        * static nodes definition
+            static-nodes.json
+            [
+                "enode://4f122277b031269b2cfc3c174d1c68882202e7295e1ea9772386d1c2c4c6789912cd778f4abd0982c57ba6c42a7f42e944e6c6da44581732e7b1883251c64b0d@18.194.167.176:30303?discport=0​"
+            ]
+
+    windows
+        mkdir .\chaindata
+        geth --datadir .\chaindata init .\wileyDAOGenesis.json
+        cp .\static-nodes.json .\chaindata\geth\
+        
+    linux
+        mkdir ./chaindata
+        geth --datadir ./chaindata init ./wileyDAOGenesis.json
+        cp ./static-nodes.json ./chaindata/geth/
+        
+Create account/wallet in blockchain
+
+    "Geth"
+        geth account new --keystore ./chaindata/keystore/
+            # enter you account passphrase
+            # in the output you can see your account/wallet id
+            # you can see your private key here: ./chaindata/keystore/
+
+Connect to blockchain net
+    guides: https://github.com/ethereum/go-ethereum/wiki/Connecting-to-the-network
+            https://github.com/ethereum/go-ethereum/wiki/Mining
+
+    "Geth" ethereum node
+        all platforms   
+
+            for default node account
+                geth --datadir ./chaindata --networkid 13 --nodiscover --mine --minerthreads=1
+
+            for your own account
+                geth --datadir ./chaindata --networkid 13 --nodiscover --mine --minerthreads=1 --etherbase 0xdF22381674dED825462795a4d6fb5A4BeEA95739
+
+    "Ethereum Wallet"
+        "C:\Program Files\Ethereum-Wallet-win64-0-9-3\Ethereum Wallet.exe" --rpc http://18.194.167.176:8545 --swarmurl="null"
+
+    "Metamask"
+        Custom RPC: http://18.194.167.176:8545
+
+Managing-your-accounts with "geth"
+    guide: https://github.com/ethereum/go-ethereum/wiki/Managing-your-accounts
+
+Other docs
+    https://1drv.ms/p/s!AiaOwr7YHCarvm9O83PU0Yod_5Ks
+    
